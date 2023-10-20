@@ -25,26 +25,25 @@ import MKSocialButton from "components/MKSocialButton";
 
 // Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-import DefaultFooter from "examples/Footers/DefaultFooter";
+//import DefaultFooter from "examples/Footers/DefaultFooter";
 import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 
 // Presentation page sections
 import Counters from "pages/Presentation/sections/Counters";
 import Information from "pages/Presentation/sections/Information";
-import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
 import Pages from "pages/Presentation/sections/Pages";
 import Testimonials from "pages/Presentation/sections/Testimonials";
-import Download from "pages/Presentation/sections/Download";
+//import Download from "pages/Presentation/sections/Download";
 
 // Presentation page components
 import BuiltByDevelopers from "pages/Presentation/components/BuiltByDevelopers";
 
 // Routes
 import routes from "routes";
-import footerRoutes from "footer.routes";
+//import footerRoutes from "footer.routes";
 
 // Images
-import bgImage from "assets/images/bg-presentation.jpg";
+import bgImage from "assets/images/karahba.jpg";
 
 function Presentation() {
   return (
@@ -54,7 +53,7 @@ function Presentation() {
         action={{
           type: "external",
           route: "https://www.creative-tim.com/product/material-kit-react",
-          label: "free download",
+          label: "free subscription",
           color: "info",
         }}
         sticky
@@ -83,7 +82,7 @@ function Presentation() {
                 },
               })}
             >
-              Material Kit 2 React{" "}
+              Car-Pro{" "}
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -92,8 +91,8 @@ function Presentation() {
               px={{ xs: 6, lg: 12 }}
               mt={1}
             >
-              Free & Open Source Web UI Kit built over ReactJS &amp; MUI. Join over 1.6 million
-              developers around the world.
+              Whether it&apos;s a weekend getaway, a business trip, or a long-awaited vacation, our
+              platform offers an array of options to suit your preferences and budget
             </MKTypography>
           </Grid>
         </Container>
@@ -111,7 +110,6 @@ function Presentation() {
       >
         <Counters />
         <Information />
-        <DesignBlocks />
         <Pages />
         <Container sx={{ mt: 6 }}>
           <BuiltByDevelopers />
@@ -161,16 +159,16 @@ function Presentation() {
           </Grid>
         </Container>
         <Testimonials />
-        <Download />
+        {/* <Download /> */}
         <MKBox pt={18} pb={6}>
           <Container>
             <Grid container spacing={3}>
               <Grid item xs={12} lg={5} ml="auto" sx={{ textAlign: { xs: "center", lg: "left" } }}>
                 <MKTypography variant="h4" fontWeight="bold" mb={0.5}>
-                  Thank you for your support!
+                  Thank you for your visit!
                 </MKTypography>
                 <MKTypography variant="body1" color="text">
-                  We deliver the best web products
+                  We deliver the best car services
                 </MKTypography>
               </Grid>
               <Grid
@@ -215,9 +213,9 @@ function Presentation() {
           </Container>
         </MKBox>
       </Card>
-      <MKBox pt={6} px={1} mt={6}>
+      {/* <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
-      </MKBox>
+      </MKBox> */}
     </>
   );
 }

@@ -24,10 +24,13 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 // Material Kit 2 React themes
 import theme from "assets/theme";
-import Presentation from "layouts/pages/presentation";
+//import Presentation from "layouts/pages/presentation";
 
 // Material Kit 2 React routes
 import routes from "routes";
+import SignInPage from "layouts/pages/authentication/sign-in";
+import Presentation from "pages/Presentation";
+import SignUpPage from "layouts/pages/authentication/sign-up";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -56,8 +59,11 @@ export default function App() {
       <CssBaseline />
       <Routes>
         {getRoutes(routes)}
-        <Route path="/presentation" element={<Presentation />} />
-        <Route path="*" element={<Navigate to="/presentation" />} />
+        <Route path="/" element={<SignInPage />} />
+        <Route path="/home" element={<Presentation />} />
+        <Route path="/signin" element={<SignInPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
     </ThemeProvider>
   );

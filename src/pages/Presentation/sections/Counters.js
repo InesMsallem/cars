@@ -33,8 +33,8 @@ function Counters() {
             <DefaultCounterCard
               count={70}
               suffix="+"
-              title="Coded Elements"
-              description="From buttons, to inputs, navbars, alerts or cards, you are covered"
+              title="Car Models"
+              description="From compact cars to spacious SUVs, our platform offers a diverse range of vehicles to cater to your every need."
             />
           </Grid>
           <Grid item xs={12} md={4} display="flex">
@@ -42,16 +42,16 @@ function Counters() {
             <DefaultCounterCard
               count={15}
               suffix="+"
-              title="Design Blocks"
-              description="Mix the sections, change the colors and unleash your creativity"
+              title="Customization Options"
+              description="Customize the car's color, features, and accessories to create your dream ride."
             />
             <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, ml: 0 }} />
           </Grid>
           <Grid item xs={12} md={4}>
             <DefaultCounterCard
               count={4}
-              title="Pages"
-              description="Save 3-4 weeks of work when you use our pre-made pages for your website"
+              title="Convenient Booking Pages"
+              description="Save time and effort with our ready-to-use booking pages."
             />
           </Grid>
         </Grid>

@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 */
 
 // react-router-dom components
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 // @mui material components
 import Container from "@mui/material/Container";
@@ -26,37 +26,37 @@ import MKBadge from "components/MKBadge";
 import MKTypography from "components/MKTypography";
 
 // Presentation page components
-import ExampleCard from "pages/Presentation/components/ExampleCard";
+//import ExampleCard from "pages/Presentation/components/ExampleCard";
 
 // Data
-import data from "pages/Presentation/sections/data/designBlocksData";
+//import data from "pages/Presentation/sections/data/designBlocksData";
 
 function DesignBlocks() {
-  const renderData = data.map(({ title, description, items }) => (
-    <Grid container spacing={3} sx={{ mb: 10 }} key={title}>
-      <Grid item xs={12} lg={3}>
-        <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
-          <MKTypography variant="h3" fontWeight="bold" mb={1}>
-            {title}
-          </MKTypography>
-          <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
-            {description}
-          </MKTypography>
-        </MKBox>
-      </Grid>
-      <Grid item xs={12} lg={9}>
-        <Grid container spacing={3}>
-          {items.map(({ image, name, count, route, pro }) => (
-            <Grid item xs={12} md={4} sx={{ mb: 2 }} key={name}>
-              <Link to={pro ? "/" : route}>
-                <ExampleCard image={image} name={name} count={count} pro={pro} />
-              </Link>
-            </Grid>
-          ))}
-        </Grid>
-      </Grid>
-    </Grid>
-  ));
+  // const renderData = data.map(({ title, description, items }) => (
+  //   <Grid container spacing={3} sx={{ mb: 10 }} key={title}>
+  //     <Grid item xs={12} lg={3}>
+  //       <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
+  //         <MKTypography variant="h3" fontWeight="bold" mb={1}>
+  //           {title}
+  //         </MKTypography>
+  //         <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
+  //           {description}
+  //         </MKTypography>
+  //       </MKBox>
+  //     </Grid>
+  //     <Grid item xs={12} lg={9}>
+  //       <Grid container spacing={3}>
+  //         {items.map(({ image, name, count, route, pro }) => (
+  //           <Grid item xs={12} md={4} sx={{ mb: 2 }} key={name}>
+  //             <Link to={pro ? "/" : route}>
+  //               <ExampleCard image={image} name={name} count={count} pro={pro} />
+  //             </Link>
+  //           </Grid>
+  //         ))}
+  //       </Grid>
+  //     </Grid>
+  //   </Grid>
+  // ));
 
   return (
     <MKBox component="section" my={6} py={6}>
@@ -78,15 +78,14 @@ function DesignBlocks() {
             sx={{ mb: 2 }}
           />
           <MKTypography variant="h2" fontWeight="bold">
-            Huge collection of sections
+            Huge collection of cars
           </MKTypography>
           <MKTypography variant="body1" color="text">
-            We have created multiple options for you to put together and customise into pixel
-            perfect pages.
+            We have offered multiple cars for our clients.
           </MKTypography>
         </Grid>
       </Container>
-      <Container sx={{ mt: 6 }}>{renderData}</Container>
+      {/* <Container sx={{ mt: 6 }}>{renderData}</Container> */}
     </MKBox>
   );
 }

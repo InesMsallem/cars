@@ -37,19 +37,63 @@ import MKButton from "components/MKButton";
 
 // Material Kit 2 React example components
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-import SimpleFooter from "examples/Footers/SimpleFooter";
+//import SimpleFooter from "examples/Footers/SimpleFooter";
 
 // Material Kit 2 React page layout routes
 import routes from "routes";
 
 // Images
-import bgImage from "assets/images/bg-sign-in-basic.jpeg";
+import bgImage from "assets/images/karahba1.jpg";
 
 function SignInBasic() {
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+
+    // Perform your authentication logic here
+    const userData = { username, password };
+
+    try {
+      // Make an API request to your authentication endpoint
+      const response = await fetch("http://localhost:3030/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (response.ok) {
+        // Successful login, handle the response or redirect
+        const result = await response.json();
+        console.log("Login successful:", result);
+        // Store the username and password in localStorage
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+        window.location.href = "/home";
+
+        // You can redirect or update the UI accordingly
+      } else {
+        // Failed login, handle the response (e.g., show an error message)
+        console.error("Login failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
   return (
     <>
       <DefaultNavbar
@@ -57,7 +101,7 @@ function SignInBasic() {
         action={{
           type: "external",
           route: "https://www.creative-tim.com/product/material-kit-react",
-          label: "free download",
+          label: "free subscription",
           color: "info",
         }}
         transparent
@@ -120,10 +164,22 @@ function SignInBasic() {
               <MKBox pt={4} pb={3} px={3}>
                 <MKBox component="form" role="form">
                   <MKBox mb={2}>
-                    <MKInput type="email" label="Email" fullWidth />
+                    <MKInput
+                      type="username"
+                      label="Username"
+                      fullWidth
+                      value={username}
+                      onChange={handleUsernameChange}
+                    />
                   </MKBox>
                   <MKBox mb={2}>
-                    <MKInput type="password" label="Password" fullWidth />
+                    <MKInput
+                      type="password"
+                      label="Password"
+                      fullWidth
+                      value={password}
+                      onChange={handlePasswordChange}
+                    />
                   </MKBox>
                   <MKBox display="flex" alignItems="center" ml={-1}>
                     <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -138,8 +194,8 @@ function SignInBasic() {
                     </MKTypography>
                   </MKBox>
                   <MKBox mt={4} mb={1}>
-                    <MKButton variant="gradient" color="info" fullWidth>
-                      sign in
+                    <MKButton variant="gradient" color="info" fullWidth onClick={handleSignIn}>
+                      Sign in
                     </MKButton>
                   </MKBox>
                   <MKBox mt={3} mb={1} textAlign="center">
@@ -147,7 +203,7 @@ function SignInBasic() {
                       Don&apos;t have an account?{" "}
                       <MKTypography
                         component={Link}
-                        to="/authentication/sign-up/cover"
+                        to="/signup"
                         variant="button"
                         color="info"
                         fontWeight="medium"
@@ -163,9 +219,9 @@ function SignInBasic() {
           </Grid>
         </Grid>
       </MKBox>
-      <MKBox width="100%" position="absolute" zIndex={2} bottom="1.625rem">
+      {/* <MKBox width="100%" position="absolute" zIndex={2} bottom="1.625rem">
         <SimpleFooter light />
-      </MKBox>
+      </MKBox> */}
     </>
   );
 }

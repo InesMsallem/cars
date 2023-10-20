@@ -27,8 +27,8 @@ import RotatingCardBack from "examples/Cards/RotatingCard/RotatingCardBack";
 import DefaultInfoCard from "examples/Cards/InfoCards/DefaultInfoCard";
 
 // Images
-import bgFront from "assets/images/rotating-card-bg-front.jpeg";
-import bgBack from "assets/images/rotating-card-bg-back.jpeg";
+import bgFront from "assets/images/karahba.jpg";
+import bgBack from "assets/images/karahba1.jpg";
 
 function Information() {
   return (
@@ -44,19 +44,19 @@ function Information() {
                   <>
                     Feel the
                     <br />
-                    Material Kit
+                    Experience
                   </>
                 }
-                description="All the MUI components that you need in a development have been re-design with the new look."
+                description="Save time and effort with our ready-to-use booking pages. Just a few clicks, and your car is reserved, so you can hit the road sooner."
               />
               <RotatingCardBack
                 image={bgBack}
                 title="Discover More"
-                description="You will save a lot of time going from prototyping to full-functional code because all elements are implemented."
+                description="You will save you a lot of time"
                 action={{
                   type: "internal",
                   route: "/sections/page-sections/page-headers",
-                  label: "start with header",
+                  label: "start with us",
                 }}
               />
             </RotatingCard>
@@ -66,16 +66,15 @@ function Information() {
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="content_copy"
-                  title="Full Documentation"
-                  description="Built by developers for developers. Check the foundation and you will find
-                    everything inside our documentation."
+                  title="Ready for the Road"
+                  description="Our platform is seamlessly integrated with MUI, the leading React components library, ensuring a smooth and interactive user interface."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="flip_to_front"
-                  title="MUI Ready"
-                  description="The world's most popular react components library for building user interfaces."
+                  title="Budget-Friendly Solutions"
+                  description="Why invest heavily in designing your car rental platform from the ground up? Get a head start with our Design System and save both time and money."
                 />
               </Grid>
             </Grid>
@@ -83,15 +82,15 @@ function Information() {
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="price_change"
-                  title="Save Time & Money"
-                  description="Creating your design from scratch with dedicated designers can be very expensive. Start with our Design System."
+                  title="Adapts to Any Journey"
+                  description="Whether you're booking from your laptop or smartphone, our platform's responsive design ensures a perfect fit, enhancing your car rental experience across devices."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="devices"
+                  icon="cars"
                   title="Fully Responsive"
-                  description="Regardless of the screen size, the website content will naturally fit the given resolution."
+                  description="From compact cars to spacious SUVs, our platform offers a diverse range of vehicles to cater to your every need."
                 />
               </Grid>
             </Grid>
